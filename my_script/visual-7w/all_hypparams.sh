@@ -1,0 +1,46 @@
+DATASET=visual-7w
+DATA_DIR=./my_dataset/${DATASET}/processed
+USERDIR=my_module
+NUMWORKERS=0
+
+# Optimizer
+OPTIMIZER=adam
+LR=1e-3
+CLIPNORM=5.
+BATCHSIZE=128
+MAXEPOCH=40
+LRSCHEDULER=reduce_lr_on_plateau
+LRSHRINK=0.5
+LRPATIENCE=5
+
+# Model
+DROPOUT=0.5
+SHARETOKENEMBEDDINGS=True
+TOKENEMBEDPATH=/home/yangsen/dataset/glove.6B/glove.6B.300d.txt
+EMBEDDIM=300
+
+# Criterion
+FREEBITSP=5.
+# latent_scale consistency 73.22
+# FREEBITSB=0.5
+# BLOCKLOSSWEIGHT=0.5
+
+# consistency 0.71
+# FREEBITSB=0.1
+# BLOCKLOSSWEIGHT=0.5
+
+# consistency 73.85
+# FREEBITSB=0.3
+# BLOCKLOSSWEIGHT=0.2
+
+# consistency 68.22
+# FREEBITSB=0.05
+# BLOCKLOSSWEIGHT=0.5
+
+# consistency 79.
+FREEBITSB=0.03
+BLOCKLOSSWEIGHT=0.5
+
+# Generate
+BEAM=10
+INFERENCEBATCHSIZE=256
